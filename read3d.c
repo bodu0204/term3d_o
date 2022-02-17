@@ -41,7 +41,7 @@ size_t	points_3d(char	*file)
 
 void	value_3d(char	*file)
 {
-	size_t	i;
+	long	i;
 	size_t	ii;
 
 	i = 1;
