@@ -19,4 +19,5 @@ typedef struct s_point
 }	t_point;
 
 int	input_str(char *s);
+void error(void);
 #endif

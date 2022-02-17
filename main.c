@@ -3,8 +3,8 @@
 void	readfile(void);
 t_point	angle(t_point	*);
 
-t_point	*g_obj;
-t_point	g_gole[3];
+t_point	*g_obj = NULL;
+t_point	g_order[3];
 
 enum camera {
 	coordinate,
@@ -19,8 +19,9 @@ int main (void)
 	readfile();
 	while (1)
 	{
+		get_order();
 		angle(camera);
-
+		change3dto2d();
 	}
 	return (0);
 }
