@@ -1,18 +1,17 @@
 #include "term_3d.h"
 
 void	readfile(void);
-t_point	angle(t_point	*);
-
+t_point	angle(t_point	*camera);
 t_point	*g_obj = NULL;
 t_point	g_order[3];
-
-enum camera {
+enum e_camera
+{
 	coordinate,
 	screen,
 	flag
 };
 
-int main (void)
+int	main(void)
 {
 	t_point	camera[2];
 

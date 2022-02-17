@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <ctype.h>
+
 
 #define D_X 150
 #define D_Y 100

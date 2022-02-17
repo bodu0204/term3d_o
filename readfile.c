@@ -1,9 +1,12 @@
 #include "term_3d.h"
 
+void	read3d(char	*file);
+int		openfile(char	*name);
+size_t	filesize(int fd);
+int		translate(char *name, char	*file);
 extern t_point	*g_obj;
 
-
-void readfile(void)
+void	readfile(void)
 {
 	char		name[BUFFER];
 	size_t		size;
@@ -26,7 +29,7 @@ void readfile(void)
 		read(fd, file, size);
 		file[size] = '\0';
 		close(fd);
-		fd = translate(file);
+		fd = translate(name, file);
 		free(file);
 	}
 	return ;
@@ -38,10 +41,10 @@ int	openfile(char	*name)
 	int	fd;
 
 	if (*name)
-		open(name, O_RDONLY);
+		fd = open(name, O_RDONLY);
 	else
 	{
-		while(1)
+		while (1)
 		{
 			write(1, "input file name:", 16);
 			i = input_str(name);
@@ -52,7 +55,7 @@ int	openfile(char	*name)
 			write(1, "can't open this file\n", 21);
 		}
 	}
-
+	return (fd);
 }
 
 size_t	filesize(int fd)
@@ -63,7 +66,7 @@ size_t	filesize(int fd)
 
 	i = read(fd, s, BUFFER);
 	size = i;
-	while(i == BUFFER)
+	while (i == BUFFER)
 	{
 		size += BUFFER;
 		i = read(fd, s, BUFFER);
@@ -76,7 +79,7 @@ size_t	filesize(int fd)
 	return (size + i);
 }
 
-int translate(char *name)
+int	translate(char *name, char	*file)
 {
 	size_t	i;
 
@@ -84,7 +87,7 @@ int translate(char *name)
 	while (name[i] != '.')
 		i++;
 	if (!strcmp(name + i, ".3d"))
-		read3d(name);
+		read3d(file);
 	else
 	{
 		write(1, "This format is not supported\n", 29);
