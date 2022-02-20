@@ -7,7 +7,7 @@ t_point	g_order[3];
 enum e_camera
 {
 	coordinate,
-	screen,
+	vecter,
 	flag
 };
 
