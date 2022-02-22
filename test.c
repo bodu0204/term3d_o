@@ -1,31 +1,10 @@
-#include "term_3d.h"
-
-int	input_str(char *s)
-{
-	int	l;
-	int	e;
-
-	bzero(s, BUFFER);
-	l = read(0, s, BUFFER);
-	e = 0;
-	while (s[BUFFER - 1] != '\0' || e)
-	{
-		e = 1;
-		if (s[BUFFER - 1] == '\0')
-		{
-			bzero(s, BUFFER);
-			return (-1);
-		}
-		bzero(s, BUFFER);
-		read(0, s, BUFFER);
-	}
-	s[l - 1] = '\0';
-	return (l);
-}
+void	rmalgebra(double	*a, int	p, int	x, int	y);
+#include <stdio.h>
 
 int	linear_algebra(double	*algebra, double	*solution, int	x, int	y)
 {
 	int		i;
+	(void)solution;
 
 	i = 0;
 	while (i < y)
@@ -73,4 +52,33 @@ void	rmalgebra(double	*a, int	p, int	x, int	y)
 		i[Y]++;
 	}
 	return ;
+}
+
+
+int main (void)
+{
+	double	d[10000];
+	int		i;
+
+	d[0] = 1;
+	d[1] = 1;
+	d[2] = 1;
+	d[3] = 10;
+	d[4] = 1;
+	d[5] = 4;
+	d[6] = 2;
+	d[7] = 17;
+	d[8] = 2;
+	d[9] = 3;
+	d[10] = 1;
+	d[11] = 17;
+	linear_algebra(d, NULL, 4, 3);
+	i = 0;
+	while (i < 12)
+	{
+		printf("[%3d] = %9lf,\t", i + 1, d[i]);
+		if (!((i + 1) % 4))
+			printf("\n");
+		i++;
+	}
 }

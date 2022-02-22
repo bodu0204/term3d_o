@@ -2,8 +2,8 @@
 
 size_t	points_3d(char	*file);
 void	value_3d(char	*file);
-size_t	nextvalue(char	*s, size_t	ii);
-long	avalue_3d(char	*str);
+size_t	nextvalue_3d(char	*s, size_t	ii);
+double	avalue_3d(char	*str);
 extern t_point	*g_obj;
 
 void	read3d(char	*file)
@@ -50,10 +50,10 @@ void	value_3d(char	*file)
 	{
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
 			(g_obj + i)->x = avalue_3d(file + ii);
-		ii = nextvalue(file, ii);
+		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
 			(g_obj + i)->y = avalue_3d(file + ii);
-		ii = nextvalue(file, ii);
+		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
 			(g_obj + i)->z = avalue_3d(file + ii);
 		while (*(file + ii) != '\n')
@@ -64,7 +64,7 @@ void	value_3d(char	*file)
 	return ;
 }
 
-size_t	nextvalue(char	*s, size_t	ii)
+size_t	nextvalue_3d(char	*s, size_t	ii)
 {
 	while (*(s + ii) != '\n' && *(s + ii) != ',')
 		ii++;
@@ -73,10 +73,10 @@ size_t	nextvalue(char	*s, size_t	ii)
 	return (ii);
 }
 
-long	avalue_3d(char	*str)
+double	avalue_3d(char	*str)
 {
-	long	value;
-	long	dvalue;
+	double	value;
+	double	dvalue;
 	int		sin;
 	char	s[BUFFER];
 
@@ -85,7 +85,7 @@ long	avalue_3d(char	*str)
 		sin = -1;
 	if (str[0] == '-' || str[0] == '+')
 		str++;
-	value = atoi(str) * 10000000000;
+	value = atoi(str);
 	while (isdigit(*str))
 		str++;
 	if (*str == '.')
@@ -93,8 +93,8 @@ long	avalue_3d(char	*str)
 		str++;
 		strlcpy(s, str, 10);
 		dvalue = atoi(str);
-		while (dvalue < 10000000000)
-			dvalue *= 10;
+		while (dvalue > 1)
+			dvalue /= 10.0;
 		value += dvalue;
 	}
 	return (value * sin);

@@ -15,21 +15,21 @@
 #define BUFFER 32
 typedef struct s_point
 {
-	long	x;
-	long	y;
-	long	z;
+	double	x;
+	double	y;
+	double	z;
 }	t_point;
 
 typedef struct s_camera
 {
-	long	coordinate_x;
-	long	coordinate_y;
-	long	coordinate_z;
-	long	vector_x;
-	long	vector_y;
-	long	vector_z;
-	long	zoom;
-	long	time;
+	double	coordinate_x;
+	double	coordinate_y;
+	double	coordinate_z;
+	double	vector_x;
+	double	vector_y;
+	double	vector_z;
+	double	zoom;
+	double	time;
 	char	flag[8];
 }	t_camera;
 
