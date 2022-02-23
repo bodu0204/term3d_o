@@ -13,12 +13,27 @@
 #define D_X 150
 #define D_Y 100
 #define BUFFER 32
+
+enum e_buf
+{
+	X,
+	Y,
+	Z
+};
+
 typedef struct s_point
 {
 	double	x;
 	double	y;
 	double	z;
 }	t_point;
+
+typedef struct s_vector
+{
+	double	vector_x;
+	double	vector_y;
+	double	vector_z;
+}	t_vector;
 
 typedef struct s_camera
 {
@@ -33,6 +48,7 @@ typedef struct s_camera
 	char	flag[8];
 }	t_camera;
 
-int	input_str(char *s);
-void error(void);
+int		input_str(char *s);
+int		linear_algebra(double	*algebra, double	*solution, int	x, int	y);
+void	error(void);
 #endif

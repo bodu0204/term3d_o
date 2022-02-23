@@ -1,8 +1,11 @@
 #include "term_3d.h"
 
 void	readfile(void);
-t_point	angle(t_point	*camera);
-t_point	*g_obj = NULL;
+void	angle(t_camera	*camera);
+void	change3dto2d(t_camera	camera);
+t_point	*g_obj_o = NULL;
+double	*g_obj = NULL;
+unsigned	g_objlen = 0;
 t_point	g_order[3];
 enum e_camera
 {
@@ -13,14 +16,14 @@ enum e_camera
 
 int	main(void)
 {
-	t_point	camera[2];
+	t_camera	camera;
 
 	readfile();
 	while (1)
 	{
 		get_order();
-		angle(camera);
-		change3dto2d();
+		angle(&camera);
+		change3dto2d(camera);
 	}
 	return (0);
 }

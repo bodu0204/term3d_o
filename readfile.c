@@ -4,7 +4,6 @@ void	read3d(char	*file);
 int		openfile(char	*name);
 size_t	filesize(int fd);
 int		translate(char *name, char	*file);
-extern t_point	*g_obj;
 
 void	readfile(void)
 {

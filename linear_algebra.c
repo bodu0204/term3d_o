@@ -23,12 +23,6 @@ int	linear_algebra(double	*algebra, double	*solution, int	x, int	y)
 	return (0);
 }
 
-enum e_buf
-{
-	X,
-	Y
-};
-
 int	swap_algebra(double	*algebra, int	p, int	x, int	y)
 {
 	int		i[2];
