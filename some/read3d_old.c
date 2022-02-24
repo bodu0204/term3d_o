@@ -4,23 +4,21 @@ size_t	points_3d(char	*file);
 void	value_3d(char	*file);
 size_t	nextvalue_3d(char	*s, size_t	ii);
 double	avalue_3d(char	*str);
-
-extern double	*g_obj;
-extern unsigned	g_objlen;
+extern t_point	*g_obj;
 
 void	read3d(char	*file)
 {
 	size_t	p;
 
 	p = points_3d(file);
-	g_obj = malloc(sizeof(double) * p * 3);
+	g_obj = malloc(sizeof(t_point) * (p + 1));
 	if (!g_obj)
 	{
 		write(1, "malloc error\n", 13);
 		error();
 	}
-	bzero(g_obj, sizeof(double) * p * 3);
-	g_objlen = p * 3;
+	bzero(g_obj, sizeof(t_point) * (p + 1));
+	g_obj->x = p + 1;
 	value_3d(file);
 	return ;
 }
@@ -46,18 +44,18 @@ void	value_3d(char	*file)
 	long	i;
 	size_t	ii;
 
-	i = 0;
+	i = 1;
 	ii = 0;
-	while (i < g_objlen)
+	while (i < g_obj->x)
 	{
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i * 3 + X] = avalue_3d(file + ii);
+			(g_obj + i)->x = avalue_3d(file + ii);
 		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i * 3 + Y] = avalue_3d(file + ii);
+			(g_obj + i)->y = avalue_3d(file + ii);
 		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i * 3 + Z] = avalue_3d(file + ii);
+			(g_obj + i)->z = avalue_3d(file + ii);
 		while (*(file + ii) != '\n')
 			ii++;
 		ii++;
