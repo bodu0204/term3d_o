@@ -13,6 +13,7 @@ void	change3dto2d(t_camera	camera)
 	unsigned	bp[D_X * D_Y];
 	t_vector	v[3];
 
+	bzero(bp, D_X * D_Y);
 	getvector(v, camera);
 	changevector(bp, camera, v);
 	collor(print, bp);
