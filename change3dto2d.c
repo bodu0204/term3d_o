@@ -9,7 +9,7 @@ extern unsigned	g_objlen;
 
 void	change3dto2d(t_camera	camera)
 {
-	char	print[(D_X + 1) * D_Y];
+	char	print[((D_X + 1) * D_Y) + 1];
 	unsigned	bp[D_X * D_Y];
 	t_vector	v[3];
 
