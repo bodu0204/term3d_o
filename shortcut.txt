@@ -10,6 +10,8 @@ norminette -R CheckDefine
 
 gcc -Wall -Wextra -Werror
 
+gcc -Wall -Wextra -Werror change3dto2d.c changevector.c collor.c linear_algebra.c main.c read3d.c readfile.c tool.c
+
 
 
 レビューの設定======================================================================================

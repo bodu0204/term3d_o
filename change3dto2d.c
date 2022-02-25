@@ -14,9 +14,20 @@ void	change3dto2d(t_camera	camera)
 	t_vector	v[3];
 
 	bzero(bp, D_X * D_Y);
-	getvector(v, camera);
+	//getvector(v, camera);
+	(v + X)->vector_x = 0.2;/* test */
+	(v + X)->vector_y = 0;/* test */
+	(v + X)->vector_z = 0;/* test */
+	(v + Y)->vector_x = 0;/* test */
+	(v + Y)->vector_y = 0;/* test */
+	(v + Y)->vector_z = -0.2;/* test */
+	(v + Z)->vector_x = 0;/* test */
+	(v + Z)->vector_y = 1;/* test */
+	(v + Z)->vector_z = 0;/* test */
+
 	changevector(bp, camera, v);
 	collor(print, bp);
-	output(print);
+	printf("%s", print);/* test */
+	//output(print);
 	return ;
 }

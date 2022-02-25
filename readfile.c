@@ -22,7 +22,7 @@ void	readfile(void)
 		if (!file)
 		{
 			write(1, "malloc error\n", 13);
-			error();
+			exit(0);/* test *///error();
 		}
 		fd = openfile(name);
 		read(fd, file, size);
@@ -67,14 +67,15 @@ size_t	filesize(int fd)
 	size = i;
 	while (i == BUFFER)
 	{
-		size += BUFFER;
 		i = read(fd, s, BUFFER);
+		size += i;
 	}
 	if (i < 0)
 	{
 		write(1, "read error\n", 11);
-		error();
+		exit(0);/* test *///error();
 	}
+	close(fd);
 	return (size + i);
 }
 

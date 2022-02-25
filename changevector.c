@@ -11,11 +11,11 @@ void	changevector(unsigned	*bp, t_camera	camera, t_vector	*v)
 	double	*cpobj;
 	size_t	i;
 
-	cpobj = malloc(g_objlen);
+	cpobj = malloc(sizeof(double) * g_objlen);
 	if (!cpobj)
 	{
 		write(1, "malloc error\n", 13);
-		error();
+		exit(0);/* test *///error();
 	}
 	i = 0;
 	while (i < g_objlen)

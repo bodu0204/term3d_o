@@ -18,12 +18,16 @@ int	main(void)
 {
 	t_camera	camera;
 
+	camera.coordinate_x = 0;/* test */
+	camera.coordinate_y = -10;/* test */
+	camera.coordinate_z = 0;/* test */
+
 	readfile();
-	while (1)
-	{
-		get_order();
-		angle(&camera);
+	//while (1)
+	//{
+		//get_order();
+		//angle(&camera);
 		change3dto2d(camera);
-	}
+	//}
 	return (0);
 }

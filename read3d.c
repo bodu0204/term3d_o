@@ -17,7 +17,7 @@ void	read3d(char	*file)
 	if (!g_obj)
 	{
 		write(1, "malloc error\n", 13);
-		error();
+		exit(0);/* test *///error();
 	}
 	bzero(g_obj, sizeof(double) * p * 3);
 	g_objlen = p * 3;
@@ -32,7 +32,7 @@ size_t	points_3d(char	*file)
 
 	i = 0;
 	p = 0;
-	while (!file[i])
+	while (file[i])
 	{
 		if (file[i] == '\n')
 			p++;
@@ -43,12 +43,12 @@ size_t	points_3d(char	*file)
 
 void	value_3d(char	*file)
 {
-	long	i;
+	size_t	i;
 	size_t	ii;
 
 	i = 0;
 	ii = 0;
-	while (i < g_objlen)
+	while (i < g_objlen / 3)
 	{
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
 			g_obj[i * 3 + X] = avalue_3d(file + ii);

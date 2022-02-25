@@ -1,4 +1,6 @@
 #include "term_3d.h"
+int	swap_algebra(double	*algebra, int	p, int	x, int	y);
+void	rmalgebra(double	*a, int	p, int	x, int	y);
 
 int	linear_algebra(double	*algebra, double	*solution, int	x, int	y)
 {
@@ -36,7 +38,7 @@ int	swap_algebra(double	*algebra, int	p, int	x, int	y)
 		if (i[Y] < y)
 		{
 			i[X] = p;
-			while (p < x)
+			while (i[X] < x)
 			{
 				buf = algebra[(x * p) + i[X]];
 				algebra[(x * p) + i[X]] = algebra[(x * i[Y]) + i[X]];

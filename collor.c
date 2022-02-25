@@ -1,5 +1,8 @@
 #include "term_3d.h"
-unsigned	search_bot(unsigned	*box, unsigned	*bp);
+void	mkbox(unsigned	*box, unsigned	*bp);
+size_t	countzero(unsigned	*bp);
+void	countnum(unsigned	*bp, unsigned	*m, size_t	*i);
+
 
 void	collor(char	*print, unsigned	*bp)
 {
@@ -38,11 +41,11 @@ void	mkbox(unsigned	*box, unsigned	*bp)
 	m[1] = 0;
 	while(i[0] < 3)
 	{
-		while ((i[1] < b * (i[0] + 1) && m[1]) || !i[0])
+		while ((i[1] < b * (i[0] + 1) && m[1]) || !i[2])
 		{
 			bzero(i + 2, sizeof(size_t) * 2);
 			m[0] = m[1];
-			countnum(box, bp, m, i);
+			countnum(bp, m, i);
 			i[1] += i[3];
 		}
 		box[i[0]] = m[1];
@@ -67,7 +70,7 @@ size_t	countzero(unsigned	*bp)
 	return (ii);
 }
 
-void	countnum(unsigned	*box, unsigned	*bp, unsigned	*m, size_t	*i)
+void	countnum(unsigned	*bp, unsigned	*m, size_t	*i)
 {
 	while (i[2] < D_X * D_Y)
 	{
