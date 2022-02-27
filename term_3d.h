@@ -6,7 +6,7 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:45 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 04:43:49 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 04:44:10 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <ctype.h>
 # include <sys/time.h>
 # include <math.h>
-#define D_X 150
-#define D_Y 100
-#define BUFFER 32
+# define D_X 150
+# define D_Y 100
+# define BUFFER 32
 enum e_buf
 {
 	X,
