@@ -6,12 +6,12 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:45 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 04:43:10 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 04:43:49 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TERM_3D_H
-#define TERM_3D_H
+# define TERM_3D_H
 # include <stdio.h>
 # include <limits.h>
 # include <strings.h>
