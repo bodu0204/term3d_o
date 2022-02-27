@@ -1,33 +1,28 @@
-#include "term_3d.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 01:06:07 by ryoakira          #+#    #+#             */
+/*   Updated: 2022/02/28 01:09:05 by ryoakira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "term_3d.h"
 void	readfile(void);
-void	angle(t_camera	*camera);
-void	change3dto2d(t_camera	camera);
+void	change3dto2d(void);
 
 double	*g_obj = NULL;
 unsigned	g_objlen = 0;
-t_point	g_order[3];
-enum e_camera
-{
-	coordinate,
-	vecter,
-	flag
-};
 
 int	main(void)
 {
-	t_camera	camera;
-
-	camera.coordinate_x = -10000;/* test */
-	camera.coordinate_y = 0;/* test */
-	camera.coordinate_z = 5;/* test */
-
 	readfile();
 	while (1)
 	{
-		//get_order();
-		//angle(&camera);
-		change3dto2d(camera);
+		change3dto2d();
 	}
 	return (0);
 }

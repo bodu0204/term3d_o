@@ -1,10 +1,20 @@
-#include "term_3d.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read3d.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 01:06:31 by ryoakira          #+#    #+#             */
+/*   Updated: 2022/02/28 01:08:21 by ryoakira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "term_3d.h"
 size_t	points_3d(char	*file);
 void	value_3d(char	*file);
 size_t	nextvalue_3d(char	*s, size_t	ii);
 double	avalue_3d(char	*str);
-
 extern double	*g_obj;
 extern unsigned	g_objlen;
 
@@ -17,7 +27,8 @@ void	read3d(char	*file)
 	if (!g_obj)
 	{
 		write(1, "malloc error\n", 13);
-		exit(0);/* test *///error();
+		free(g_obj);
+		exit(0);
 	}
 	bzero(g_obj, sizeof(double) * p * 3);
 	g_objlen = p * 3;

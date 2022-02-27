@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   linear_algebra.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 01:06:02 by ryoakira          #+#    #+#             */
+/*   Updated: 2022/02/28 01:06:03 by ryoakira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "term_3d.h"
 int	swap_algebra(double	*algebra, int	p, int	x, int	y);
 void	rmalgebra(double	*a, int	p, int	x, int	y);

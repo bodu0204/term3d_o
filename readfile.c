@@ -1,5 +1,16 @@
-#include "term_3d.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   readfile.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 01:06:36 by ryoakira          #+#    #+#             */
+/*   Updated: 2022/02/28 01:06:37 by ryoakira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "term_3d.h"
 void	read3d(char	*file);
 int		openfile(char	*name);
 size_t	filesize(int fd);
@@ -22,7 +33,7 @@ void	readfile(void)
 		if (!file)
 		{
 			write(1, "malloc error\n", 13);
-			exit(0);/* test *///error();
+			exit(0);
 		}
 		fd = openfile(name);
 		read(fd, file, size);
@@ -73,7 +84,7 @@ size_t	filesize(int fd)
 	if (i < 0)
 	{
 		write(1, "read error\n", 11);
-		exit(0);/* test *///error();
+		exit(0);
 	}
 	close(fd);
 	return (size + i);

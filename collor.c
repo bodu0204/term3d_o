@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   collor.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 01:05:55 by ryoakira          #+#    #+#             */
+/*   Updated: 2022/02/28 01:05:56 by ryoakira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "term_3d.h"
 void	mkbox(unsigned	*box, unsigned	*bp);
 size_t	countzero(unsigned	*bp);
 void	countnum(unsigned	*bp, unsigned	*m, size_t	*i);
 void	newline(char	*print);
-
 
 void	collor(char	*print, unsigned	*bp)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   changevector.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 01:05:50 by ryoakira          #+#    #+#             */
+/*   Updated: 2022/02/28 01:05:51 by ryoakira         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "term_3d.h"
 void	changebp(unsigned	*bp, double	*cpobj);
 void	solvevector(double	*dobj, double	*sobj, t_camera	camera, t_vector	*v);
@@ -15,7 +27,8 @@ void	changevector(unsigned	*bp, t_camera	camera, t_vector	*v)
 	if (!cpobj)
 	{
 		write(1, "malloc error\n", 13);
-		exit(0);/* test *///error();
+		free(g_obj);
+		exit(0);
 	}
 	i = 0;
 	while (i < g_objlen)
