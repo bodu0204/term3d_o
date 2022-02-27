@@ -6,21 +6,21 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:45 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 01:06:46 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 04:32:24 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TERM_3D
 #define TERM_3D
-#include <stdio.h>
-#include <limits.h>
-#include <strings.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <ctype.h>
-#include <sys/time.h>
-#include <math.h>
+# include <stdio.h>
+# include <limits.h>
+# include <strings.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <ctype.h>
+# include <sys/time.h>
+# include <math.h>
 #define D_X 150
 #define D_Y 100
 #define BUFFER 32

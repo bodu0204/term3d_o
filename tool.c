@@ -6,7 +6,7 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:57 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 01:06:58 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 01:56:42 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ double	time_diff(void)
 {
 	static struct timespec	p = {0};
 	struct timespec			n;
-	unsigned				sec;
-    int						nsec;
+	unsigned int			sec;
+	int						nsec;
 
 	if (!p.tv_sec)
 	{

@@ -6,7 +6,7 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:07 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 01:09:05 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 02:11:46 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 void	readfile(void);
 void	change3dto2d(void);
 
-double	*g_obj = NULL;
-unsigned	g_objlen = 0;
+double			*g_obj = NULL;
+unsigned int	g_objlen = 0;
 
 int	main(void)
 {

@@ -6,7 +6,7 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:40 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 01:06:41 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 01:56:00 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	stdmov(t_vector	*v, t_camera	*camera)
 
 	dig += time_diff();
 	if (dig > 2)
-	dig -= 2;
+		dig -= 2;
 	stset(camera, v, dig * M_PI);
 	return ;
 }
 
-void	stset(t_camera	*camera, t_vector	*v,double	pi)
+void	stset(t_camera	*camera, t_vector	*v, double	pi)
 {
 	camera->coordinate_x = cos(pi) * 10;
 	camera->coordinate_y = sin(pi) * 10;

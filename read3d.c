@@ -6,7 +6,7 @@
 /*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:31 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 01:08:21 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 01:54:35 by ryoakira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@ size_t	points_3d(char	*file);
 void	value_3d(char	*file);
 size_t	nextvalue_3d(char	*s, size_t	ii);
 double	avalue_3d(char	*str);
-extern double	*g_obj;
-extern unsigned	g_objlen;
+extern double		*g_obj;
+extern unsigned int	g_objlen;
 
 void	read3d(char	*file)
 {
