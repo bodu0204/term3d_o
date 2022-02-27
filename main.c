@@ -23,11 +23,11 @@ int	main(void)
 	camera.coordinate_z = 5;/* test */
 
 	readfile();
-	//while (1)
-	//{
+	while (1)
+	{
 		//get_order();
 		//angle(&camera);
 		change3dto2d(camera);
-	//}
+	}
 	return (0);
 }

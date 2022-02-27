@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <sys/time.h>
+#include <math.h>
 
 
 #define D_X 150
@@ -50,5 +52,6 @@ typedef struct s_camera
 
 int		input_str(char *s);
 int		linear_algebra(double	*algebra, double	*solution, int	x, int	y);
+double	time_diff(void);
 void	error(void);
 #endif

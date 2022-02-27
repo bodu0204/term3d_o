@@ -22,3 +22,22 @@ int	input_str(char *s)
 	s[l - 1] = '\0';
 	return (l);
 }
+
+double	time_diff(void)
+{
+	static struct timespec	p = {0};
+	struct timespec			n;
+	unsigned				sec;
+    int						nsec;
+
+	if (!p.tv_sec)
+	{
+		clock_gettime(CLOCK_REALTIME, &p);
+		return (0);
+	}
+	clock_gettime(CLOCK_REALTIME, &n);
+	sec = n.tv_sec - p.tv_sec;
+	nsec = n.tv_nsec - p.tv_nsec;
+	p = n;
+	return ((double)sec + (double)nsec / (1000 * 1000 * 1000));
+}
