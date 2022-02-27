@@ -44,7 +44,8 @@ void	solvevector(double	*dobj, double	*sobj, t_camera	camera, t_vector	*v)
 	a[9] = (v + 1)->vector_z;
 	a[10] = (v + 2)->vector_z;
 	a[11] = sobj[2] - camera.coordinate_z;
-	linear_algebra(a, dobj, 4, 3);
+	if (linear_algebra(a, dobj, 4, 3))
+		printf("error\n");
 }
 
 void	changebp(unsigned	*bp, double	*cpobj)
@@ -55,14 +56,14 @@ void	changebp(unsigned	*bp, double	*cpobj)
 	i = 0;
 	while (i < g_objlen)
 	{
-		if (cpobj[i * 3 + Z] > 0)
+		if (cpobj[i + Z] > 0)
 		{
-			c[X] = cpobj[i * 3 + X] + (D_X / 2);
-			c[Y] = cpobj[i * 3 + Y] + (D_Y / 2);
+			c[X] = cpobj[i + X] + (D_X / 2);
+			c[Y] = cpobj[i + Y] + (D_Y / 2);
 			if(c[X] >= 0 && c[X] < D_X && c[Y] >= 0 && c[Y] < D_Y)
 				bp[(c[Y] * D_X) + c[X]]++;
 		}
-		i++;
+		i += 3;
 	}
 	return ;
 }

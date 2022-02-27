@@ -2,6 +2,7 @@
 void	mkbox(unsigned	*box, unsigned	*bp);
 size_t	countzero(unsigned	*bp);
 void	countnum(unsigned	*bp, unsigned	*m, size_t	*i);
+void	newline(char	*print);
 
 
 void	collor(char	*print, unsigned	*bp)
@@ -14,18 +15,18 @@ void	collor(char	*print, unsigned	*bp)
 	while (bi < D_X * D_Y)
 	{
 		if (bp[bi] < box[0])
-			print[bi + (bi / D_X)] = '#';
-		else if (bp[bi] >= box[2])
 			print[bi + (bi / D_X)] = '-';
+		else if (bp[bi] >= box[2])
+			print[bi + (bi / D_X)] = '#';
 		else if (bp[bi] >= box[1])
-			print[bi + (bi / D_X)] = '+';
-		else
 			print[bi + (bi / D_X)] = 'o';
+		else
+			print[bi + (bi / D_X)] = '+';
 		if (bp[bi] == 0)
 			print[bi + (bi / D_X)] = ' ';
-		print[(((bi / D_X) + 1) * (D_X + 1)) - 1] = '\n';
 		bi++;
 	}
+	newline(print);
 	return ;
 }
 
@@ -85,6 +86,19 @@ void	countnum(unsigned	*bp, unsigned	*m, size_t	*i)
 				i[3]++;
 		}
 		i[2]++;
+	}
+	return ;
+}
+
+void	newline(char	*p)
+{
+	size_t	i;
+
+	i = D_X;
+	while (i < (D_X + 1) * D_Y)
+	{
+		p[i] = '\n';
+		i += D_X + 1;
 	}
 	return ;
 }

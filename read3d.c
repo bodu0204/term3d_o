@@ -48,20 +48,20 @@ void	value_3d(char	*file)
 
 	i = 0;
 	ii = 0;
-	while (i < g_objlen / 3)
+	while (i < g_objlen)
 	{
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i * 3 + X] = avalue_3d(file + ii);
+			g_obj[i + X] = avalue_3d(file + ii);
 		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i * 3 + Y] = avalue_3d(file + ii);
+			g_obj[i + Y] = avalue_3d(file + ii);
 		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i * 3 + Z] = avalue_3d(file + ii);
+			g_obj[i + Z] = avalue_3d(file + ii);
 		while (*(file + ii) != '\n')
 			ii++;
 		ii++;
-		i++;
+		i += 3;
 	}
 	return ;
 }
@@ -94,7 +94,7 @@ double	avalue_3d(char	*str)
 	{
 		str++;
 		strlcpy(s, str, 10);
-		dvalue = atoi(str);
+		dvalue = atoi(s);
 		while (dvalue > 1)
 			dvalue /= 10.0;
 		value += dvalue;

@@ -3,7 +3,7 @@
 void	readfile(void);
 void	angle(t_camera	*camera);
 void	change3dto2d(t_camera	camera);
-t_point	*g_obj_o = NULL;
+
 double	*g_obj = NULL;
 unsigned	g_objlen = 0;
 t_point	g_order[3];
@@ -18,9 +18,9 @@ int	main(void)
 {
 	t_camera	camera;
 
-	camera.coordinate_x = 0;/* test */
-	camera.coordinate_y = -10;/* test */
-	camera.coordinate_z = 0;/* test */
+	camera.coordinate_x = -10000;/* test */
+	camera.coordinate_y = 0;/* test */
+	camera.coordinate_z = 5;/* test */
 
 	readfile();
 	//while (1)
