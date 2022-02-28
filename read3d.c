@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryoakira <ryoakira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: blyu <blyu@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 01:06:31 by ryoakira          #+#    #+#             */
-/*   Updated: 2022/02/28 01:54:35 by ryoakira         ###   ########.fr       */
+/*   Updated: 2022/02/28 15:12:58 by blyu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ void	value_3d(char	*file)
 	while (i < g_objlen)
 	{
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i + X] = avalue_3d(file + ii);
+			g_obj[i + X] = atof(file + ii);
 		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i + Y] = avalue_3d(file + ii);
+			g_obj[i + Y] = atof(file + ii);
 		ii = nextvalue_3d(file, ii);
 		if (*(file + ii) != '\n' && *(file + ii) != ',')
-			g_obj[i + Z] = avalue_3d(file + ii);
+			g_obj[i + Z] = atof(file + ii);
 		while (*(file + ii) != '\n')
 			ii++;
 		ii++;
@@ -85,7 +85,7 @@ size_t	nextvalue_3d(char	*s, size_t	ii)
 		ii++;
 	return (ii);
 }
-
+/*
 double	avalue_3d(char	*str)
 {
 	double	value;
@@ -112,3 +112,4 @@ double	avalue_3d(char	*str)
 	}
 	return (value * sin);
 }
+ */
