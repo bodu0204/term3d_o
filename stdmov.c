@@ -29,13 +29,13 @@ void	stset(t_camera	*camera, t_vector	*v, double	pi)
 	camera->coordinate_x = cos(pi) * 10;
 	camera->coordinate_y = sin(pi) * 10;
 	camera->coordinate_z = 3;
-	v[X].vector_x = 0.1 * cos(pi - (0.5 * M_PI));
-	v[X].vector_y = 0.1 * sin(pi - (0.5 * M_PI));
+	v[X].vector_x = 0.1 * cos(pi - (0.5 * 3.14));
+	v[X].vector_y = 0.1 * sin(pi - (0.5 * 3.14));
 	v[X].vector_z = 0;
 	v[Y].vector_x = 0;
 	v[Y].vector_y = 0;
 	v[Y].vector_z = 0.16;
-	v[Z].vector_x = cos(pi + M_PI);
-	v[Z].vector_y = sin(pi + M_PI);
+	v[Z].vector_x = cos(pi + 3.14);
+	v[Z].vector_y = sin(pi + 3.14);
 	v[Z].vector_z = 0;
 }
