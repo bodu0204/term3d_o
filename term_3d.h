@@ -21,6 +21,7 @@
 # include <ctype.h>
 # include <sys/time.h>
 # include <math.h>
+# include <string.h> 
 # define D_X 150
 # define D_Y 100
 # define BUFFER 32
